@@ -31,3 +31,5 @@
 
 - name: Cassandra | Set the right expiration on the cassandra user
   command: "sudo chage -I -1 -E -1 -m -1 -M -1 -W -1 -E -1 {{cassandra_user}}"
+  register: result
+  changed_when: result.stdout != ""
