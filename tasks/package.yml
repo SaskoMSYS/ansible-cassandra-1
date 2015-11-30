@@ -25,4 +25,9 @@
     state: present
     update_cache: yes
 
+- name: fix cassandra init script
+  command: sed -i '/CMD_PATT="cassandra.+CassandraDaemon"/c\CMD_PATT="cassandra"' /etc/init.d/cassandra
+
+
 - include: package_configure.yml
+
