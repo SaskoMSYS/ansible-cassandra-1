@@ -12,6 +12,7 @@ cassandra_gid: 3455
 
 cassandra_user_dir: "/app/home/{{cassandra_user}}"
 cassandra_source_data_dir: "/app/cassandra"
+cassandra_data_dir: "/var/lib/cassandra"
 
 # cassandra-env.sh configuration parameters
 cassandra_max_heap_size: null
