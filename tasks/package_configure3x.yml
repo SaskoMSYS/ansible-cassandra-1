@@ -1,0 +1,11 @@
+# file: cassandra/tasks/package_configure.yml
+
+- name: Cassandra | Update the cassandra configuration
+  template:
+    src: "config/{{cassandra_config_ver}}/cassandra.yaml.j2"
+    dest: "/etc/cassandra/cassandra.yaml"
+    owner: "{{cassandra_user}}"
+    group: "{{cassandra_group}}"
+    mode: 0644
+  notify:
+    - restart cassandra
